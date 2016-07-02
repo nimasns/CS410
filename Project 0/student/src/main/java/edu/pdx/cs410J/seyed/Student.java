@@ -48,7 +48,7 @@ public class Student extends Human {
    */                                                                               
   public String toString() {
     return getName() + " has a GPA of " + gpa + " and is taking " +
-            formatNumberOfClasses() + " " + formatClassNames() ;
+            formatNumberOfClasses() + formatClassNames() ;
   }
 
   private String formatClassNames() {
@@ -69,19 +69,19 @@ public class Student extends Human {
         sb.append("and ");
       }
     }
-    return sb.toString() + ".";
+    return (sb.append('.')).toString();
   }
 
   private String formatNumberOfClasses() {
     int numberOfClasses = classes.size();
 
     if (numberOfClasses == 0) {
-      return "0 classes.";
+      return "0 classes";
     }
     else if(numberOfClasses == 1) {
-      return "1 class:";
+      return "1 class: ";
     } else {
-      return numberOfClasses + " classes:";
+      return numberOfClasses + " classes: ";
     }
   }
 
