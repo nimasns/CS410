@@ -83,9 +83,29 @@ public class StudentTest
         ArrayList<String> classes = new ArrayList<>();
         classes.add("Java");
         Student student = createStudentWithClasses(classes);
-        assertThat(student.toString(), containsString("1 class: Java"));
+        assertThat(student.toString(), containsString("1 class: Java."));
 
     }
+
+    @Test
+    public void toStringContainsNameOfThreeClasses() {
+        ArrayList<String> classes = new ArrayList<>();
+        classes.add("Algorithms");
+        classes.add("Operating Systems");
+        classes.add("Java");
+        Student student = createStudentWithClasses(classes);
+        assertThat(student.toString(), containsString("3 classes: Algorithms, Operating Systems, and Java."));
+    }
+
+    @Test
+    public void toStringContainsNameOfTwoClasses() {
+        ArrayList<String> classes = new ArrayList<>();
+        classes.add("Algorithms");
+        classes.add("Java");
+        Student student = createStudentWithClasses(classes);
+        assertThat(student.toString(), containsString("2 classes: Algorithms and Java."));
+    }
+
     private Student createStudentWithClasses(ArrayList<String> classes) {
         return new Student("Name", classes, 3.64, "Doesn't matter");
     }

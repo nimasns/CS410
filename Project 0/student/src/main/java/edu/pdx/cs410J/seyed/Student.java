@@ -52,10 +52,22 @@ public class Student extends Human {
 
   private String formatClassNames() {
     StringBuilder sb = new StringBuilder();
-    for (String className : this.classes) {
+    int numberOfClasses = this.classes.size();
+    for (int i = 0; i < numberOfClasses; i++) {
+      String className = this.classes.get(i);
       sb.append(className);
+
+      if(numberOfClasses > 2 && i != numberOfClasses - 1) {
+        sb.append(", ");
+      }
+
+      if (i == numberOfClasses - 2) {
+        sb.append(" and ");
+      } else if ( i != numberOfClasses - 1){
+        sb.append(" ");
+      }
     }
-    return sb.toString();
+    return sb.toString() + ".";
   }
 
   private String formatNumberOfClasses() {
