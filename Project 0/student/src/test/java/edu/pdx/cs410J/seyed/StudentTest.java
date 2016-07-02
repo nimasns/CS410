@@ -4,6 +4,7 @@ import org.hamcrest.CoreMatchers;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.StringJoiner;
 
@@ -79,6 +80,10 @@ public class StudentTest
 
     @Test
     public void toStringContainsNameOfClasses() {
+        ArrayList<String> classes = new ArrayList<>();
+        classes.add("Java");
+        Student student = createStudentWithClasses(classes);
+        assertThat(student.toString(), containsString("1 class: Java"));
 
     }
     private Student createStudentWithClasses(ArrayList<String> classes) {
