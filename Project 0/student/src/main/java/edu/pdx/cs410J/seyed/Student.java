@@ -3,13 +3,17 @@ package edu.pdx.cs410J.seyed;
 import edu.pdx.cs410J.lang.Human;
 
 import java.util.ArrayList;
-                                                                                    
+import java.util.List;
+
 /**                                                                                 
  * This class is represents a <code>Student</code>.                                 
  */                                                                                 
 public class Student extends Human {                                                
 
   private final double gpa;
+  private List<String> classes;
+
+
   /**                                                                               
    * Creates a new <code>Student</code>                                             
    *                                                                                
@@ -23,10 +27,10 @@ public class Student extends Human {
    * @param gender                                                                  
    *        The student's gender ("male" or "female", case insensitive)             
    */                                                                               
-  public Student(String name, ArrayList classes, double gpa, String gender) {
+  public Student(String name, List<String> classes, double gpa, String gender) {
     super(name);
-
     this.gpa = gpa;
+    this.classes = classes;
   }
 
   /**                                                                               
@@ -42,7 +46,7 @@ public class Student extends Human {
    * <code>Student</code>.                                                          
    */                                                                               
   public String toString() {
-    return getName() + gpa;
+    return getName() + gpa + classes.size() + " classes";
   }
 
   /**
