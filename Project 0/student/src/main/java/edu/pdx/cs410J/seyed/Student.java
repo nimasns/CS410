@@ -57,14 +57,15 @@ public class Student extends Human {
       String className = this.classes.get(i);
       sb.append(className);
 
-      if(numberOfClasses > 2 && i != numberOfClasses - 1) {
-        sb.append(", ");
+      if (i != numberOfClasses - 1) {
+        if (numberOfClasses > 2) {
+          sb.append(",");
+        }
+        sb.append(" ");
       }
 
       if (i == numberOfClasses - 2) {
-        sb.append(" and ");
-      } else if ( i != numberOfClasses - 1){
-        sb.append(" ");
+        sb.append("and ");
       }
     }
     return sb.toString() + ".";
