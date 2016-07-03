@@ -1,0 +1,26 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Ignore the Maven "target" directory because it contain build artifacts, not
+# code.  Similarly, ignore the generated "dependency-reduced-pom.xml" file.
+target
+*/dependency-reduced-pom.xml
+
+# Ignore IntelliJ files
+*/*.iml
+*/*.ipr
+*/*.iws
+.idea
+
+# Ignore emacs backups
+*.~*
