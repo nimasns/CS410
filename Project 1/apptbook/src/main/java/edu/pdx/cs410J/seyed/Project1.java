@@ -14,15 +14,64 @@ public class Project1 {
       System.err.println("Missing command line arguments");
     }
 
+    //local var for storing the info
+    String owner = null;
+    String description = null;
+    boolean printFlag = false;
+    boolean readmeFlag = false;
+    String beginDate = null;
+    String beginTime = null;
+    String endDate = null;
+    String endTime = null;
+
     /*for (String arg : args) {
       System.out.println(arg);
     }*/
 
-    for (String arg : args) {
-      if (arg.equals("-README")){
+    /**
+     * First look for the options command, if they do not apear in the begining treat everything
+     * else as the inputting arguements.
+     */
+    //Counts the number of arguments for distingutionig commands from other info
+    int a=0;
+    for(int i=0; args[0].startsWith("-"); i++) {
+      a++;
+      if (args[i].equals("-README")) {
         printReadme();
+      } else if (args[i].equals("-print")) {
+        printFlag = true;
+      } else {
+        System.err.println("Invalid option command");
       }
     }
+
+    //Storing infromation in the correct feilds
+    for (String arg : args) {
+      if (arg.contains("-README") && !readmeFlag) {
+        readmeFlag = true;
+      } else if (arg.contains("-print") && !printFlag) {
+        printFlag = true;
+      } else if (description == null) {
+        description = arg;
+      } else if (owner == null) {
+        owner = arg;
+      } else if (beginDate == null) {
+        beginDate = arg;
+      } else if (beginTime == null) {
+        beginTime = arg;
+      } else if (endDate == null) {
+        endDate = arg;
+      } else if (endTime == null) {
+        endTime = arg;
+      }
+    }
+
+
+    Appointment appointment = new Appointment(description, beginDate, endDate + " " + endTime);
+    System.out.println(appointment);
+
+    //if (printFlag) System.out.println(appointment.toString());
+
     System.exit(1);
   }
 
@@ -45,7 +94,7 @@ public class Project1 {
     System.out.println("-print            - Prints a description of the new appointment");
     System.out.println("-README           - Prints a README for this project and exits");
     System.out.println("Date and time should be in the format: mm/dd/yyyy hh:mm \n");
-    System.exit(1);
+    System.exit(2);
   }
 
 }

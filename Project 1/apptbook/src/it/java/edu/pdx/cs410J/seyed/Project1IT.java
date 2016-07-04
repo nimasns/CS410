@@ -2,6 +2,7 @@ package edu.pdx.cs410J.seyed;
 
 import edu.pdx.cs410J.InvokeMainTestCase;
 import org.junit.Test;
+import sun.applet.Main;
 
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -29,6 +30,15 @@ public class Project1IT extends InvokeMainTestCase {
     MainMethodResult result = invokeMain();
     assertThat(result.getExitCode(), equalTo(1));
     assertThat(result.getErr(), containsString("Missing command line arguments"));
+  }
+
+  /**
+   * Tests that the -README command will cause the exit code of 2
+   */
+  @Test
+  public void testReadmeCommand() {
+    MainMethodResult result = invokeMain("-README");
+    assertThat(result.getExitCode(), equalTo(2));
   }
 
 }
