@@ -3,7 +3,10 @@ package edu.pdx.cs410J.seyed;
 import edu.pdx.cs410J.AbstractAppointment;
 import sun.security.krb5.internal.crypto.Des;
 
+import javax.swing.*;
 import javax.swing.text.html.parser.Entity;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Appointment extends AbstractAppointment {
   private String description;

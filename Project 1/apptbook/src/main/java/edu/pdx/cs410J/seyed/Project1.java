@@ -1,6 +1,11 @@
 package edu.pdx.cs410J.seyed;
 
 import edu.pdx.cs410J.AbstractAppointmentBook;
+import edu.pdx.cs410J.AppointmentBookDumper;
+
+import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * The main class for the CS410J appointment book Project
@@ -23,6 +28,9 @@ public class Project1 {
     String beginTime = null;
     String endDate = null;
     String endTime = null;
+
+    String dateFormat = "(0?[1-9]|[012][0-9]|3[01])/(0?[1-9]|[12][0-9])/(\\d{4}|\\d{2}) ([01]?[0-9]|2[0-3]):[0-5][0-9]";
+    String timeFormat = "([01]?[0-9]|2[0-3]):[0-5][0-9]";
 
     /*for (String arg : args) {
       System.out.println(arg);
@@ -51,10 +59,10 @@ public class Project1 {
         readmeFlag = true;
       } else if (arg.contains("-print") && !printFlag) {
         printFlag = true;
-      } else if (description == null) {
-        description = arg;
       } else if (owner == null) {
         owner = arg;
+      } else if (description == null) {
+        description = arg;
       } else if (beginDate == null) {
         beginDate = arg;
       } else if (beginTime == null) {
@@ -66,15 +74,30 @@ public class Project1 {
       }
     }
 
+    if (!formatCheck(dateFormat, beginDate + " " + beginTime)) {
+      System.out.println(beginDate);
+      System.err.println("Invalid Begin Time Format!!!!!");
+      System.exit(1);
+    } else if (!formatCheck(dateFormat, endDate + " " + endTime)) {
+      System.err.println("Invalid End Time Format!!!!!");
+      System.exit(1);
+    }
 
-    Appointment appointment = new Appointment(description, beginDate, endDate + " " + endTime);
+    Appointment appointment = new Appointment(description, beginDate + " " + beginTime, endDate + " " + endTime);
     System.out.println(appointment);
+    System.out.println(Arrays.toString(args));
 
     //if (printFlag) System.out.println(appointment.toString());
 
     System.exit(1);
   }
 
+  private static boolean formatCheck(String format, String time) {
+    Pattern pattern = Pattern.compile(format);
+    Matcher matcher = pattern.matcher(time);
+    boolean matches = matcher.matches();
+    return matches;
+  }
   private static void printReadme() {
     System.out.println("\n\n");
     System.out.println("Project 1 README");
