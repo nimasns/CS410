@@ -18,7 +18,6 @@ public class AppointmentTest {
     appointment.getBeginTimeString();
   }
 
-  @Ignore
   @Test
   public void initiallyAllAppointmentsHaveTheSameDescription() {
     Appointment appointment = new Appointment(null, null, null);

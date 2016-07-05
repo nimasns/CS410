@@ -30,34 +30,13 @@ public class Project1 {
     String endTime = null;
 
     String dateFormat = "(0?[1-9]|[012][0-9]|3[01])/(0?[1-9]|[12][0-9])/(\\d{4}|\\d{2}) ([01]?[0-9]|2[0-3]):[0-5][0-9]";
-    String timeFormat = "([01]?[0-9]|2[0-3]):[0-5][0-9]";
-
-    /*for (String arg : args) {
-      System.out.println(arg);
-    }*/
-
-    /**
-     * First look for the options command, if they do not apear in the begining treat everything
-     * else as the inputting arguements.
-     */
-    //Counts the number of arguments for distingutionig commands from other info
-    int a=0;
-    for(int i=0; args[0].startsWith("-"); i++) {
-      a++;
-      if (args[i].equals("-README")) {
-        printReadme();
-      } else if (args[i].equals("-print")) {
-        printFlag = true;
-      } else {
-        System.err.println("Invalid option command");
-      }
-    }
 
     //Storing infromation in the correct feilds
     for (String arg : args) {
-      if (arg.contains("-README") && !readmeFlag) {
+      if (arg.startsWith("-README") && !readmeFlag) {
         readmeFlag = true;
-      } else if (arg.contains("-print") && !printFlag) {
+        printReadme();
+      } else if (arg.startsWith("-print") && !printFlag) {
         printFlag = true;
       } else if (owner == null) {
         owner = arg;
@@ -74,21 +53,32 @@ public class Project1 {
       }
     }
 
-    if (!formatCheck(dateFormat, beginDate + " " + beginTime)) {
-      System.out.println(beginDate);
-      System.err.println("Invalid Begin Time Format!!!!!");
-      System.exit(1);
+    //missing fields check
+    if (description == null) {
+      System.err.println("Missing description field!");
+    } else if (owner == null) {
+      System.err.println("Missing owner field!");
+    } else if (beginDate == null) {
+      System.err.println("Missing begin date field!");
+    } else if (beginTime == null) {
+      System.err.println("Missing begin time field!");
+    } else if (endDate == null) {
+      System.err.println("Missing end date field!");
+    } else if (endTime == null) {
+      System.err.println("Missing end time field!");
+    } else if (!formatCheck(dateFormat, beginDate + " " + beginTime)) {
+      System.err.println("Invalid begin time format!");
     } else if (!formatCheck(dateFormat, endDate + " " + endTime)) {
-      System.err.println("Invalid End Time Format!!!!!");
-      System.exit(1);
+      System.err.println("Invalid end time format!");
     }
 
     Appointment appointment = new Appointment(description, beginDate + " " + beginTime, endDate + " " + endTime);
-    System.out.println(appointment);
-    System.out.println(Arrays.toString(args));
+    AppointmentBook appointmentBook = new AppointmentBook(owner, appointment);
 
-    //if (printFlag) System.out.println(appointment.toString());
-
+    if (printFlag) {
+      System.out.println(appointmentBook.toString());
+      System.out.println(appointment.toString());
+    }
     System.exit(1);
   }
 

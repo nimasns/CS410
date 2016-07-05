@@ -37,8 +37,49 @@ public class Project1IT extends InvokeMainTestCase {
    */
   @Test
   public void testReadmeCommand() {
-    MainMethodResult result = invokeMain("-README");
+    MainMethodResult result = invokeMain(Project1.class, "-README");
     assertThat(result.getExitCode(), equalTo(2));
   }
 
+  @Test
+  public void missingDescription() {
+    MainMethodResult result = invokeMain(Project1.class, "Owner");
+    assertThat(result.getErr(), containsString("Missing description field!"));
+  }
+
+  @Test
+  public void missingBeginDate() {
+    MainMethodResult result = invokeMain(Project1.class, "Owner", "Description");
+    assertThat(result.getErr(), containsString("Missing begin date field!"));
+  }
+
+  @Test
+  public void missingBeginTime() {
+    MainMethodResult result = invokeMain(Project1.class, "Owner", "Description", "5/2/15");
+    assertThat(result.getErr(), containsString("Missing begin time field!"));
+  }
+
+  @Test
+  public void missingEndDate() {
+    MainMethodResult result = invokeMain(Project1.class, "Owner", "Description", "5/2/15", "12:30");
+    assertThat(result.getErr(), containsString("Missing end date field!"));
+  }
+
+  @Test
+  public void missingEndTime() {
+    MainMethodResult result = invokeMain(Project1.class, "Owner", "Description", "5/2/15", "12:30", "5/12/2015");
+    assertThat(result.getErr(), containsString("Missing end time field!"));
+  }
+
+  @Test
+  public void IncorrectBeginTimeFormat() {
+    MainMethodResult result = invokeMain(Project1.class, "Owner", "Description", "5/215", "12:30", "5/12/2015", "1:00");
+    assertThat(result.getErr(), containsString("Invalid begin time format!"));
+  }
+
+  @Test
+  public void IncorrectEndTimeFormat() {
+    MainMethodResult result = invokeMain(Project1.class, "Owner", "Description", "5/2/15", "12:30", "5/122015", "1:00");
+    assertThat(result.getErr(), containsString("Invalid end time format!"));
+  }
 }
