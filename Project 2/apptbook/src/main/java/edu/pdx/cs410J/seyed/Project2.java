@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 /**
  * The main class for the CS410J appointment book Project
  */
-public class Project1 {
+public class Project2 {
 
   public static void main(String[] args) {
     //Class c = AbstractAppointmentBook.class;  // Refer to one of Dave's classes so that we can be sure it is on the classpath
@@ -102,7 +102,7 @@ public class Project1 {
     System.out.println("There are two command line commands which can be used");
     System.out.println("As well as the inputted information should be in the below format");
     System.out.println("---------------\n");
-    System.out.println("usage: java edu.pdx.edu.cs410J.<login-id>.Project1 [options] <args>\n");
+    System.out.println("usage: java edu.pdx.edu.cs410J.<login-id>.Project2 [options] <args>\n");
     System.out.println("args are (in this order):");
     System.out.println("owner             - The person whose owns the appt book");
     System.out.println("description       - A description of the appointment");
