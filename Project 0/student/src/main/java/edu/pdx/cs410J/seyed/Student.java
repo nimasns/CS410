@@ -13,6 +13,7 @@ public class Student extends Human {
 
   private final double gpa;
   private List<String> classes;
+  private String gender;
 
 
   /**                                                                               
@@ -32,6 +33,7 @@ public class Student extends Human {
     super(name);
     this.gpa = gpa;
     this.classes = classes;
+    this.gender = gender;
   }
 
   /**                                                                               
@@ -48,7 +50,11 @@ public class Student extends Human {
    */                                                                               
   public String toString() {
     return getName() + " has a GPA of " + gpa + " and is taking " +
-            formatNumberOfClasses() + formatClassNames() ;
+            formatNumberOfClasses() + formatClassNames() + " " + getGenderProunoun();
+  }
+
+  private String getGenderProunoun() {
+    return (this.gender.equals("female") ? "She" : "He");
   }
 
   private String formatClassNames() {

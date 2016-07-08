@@ -130,6 +130,24 @@ public class StudentTest
     }
 
 
+    @Test
+    public void maleStudentHasMalePronounInToString() {
+        String gender = "male";
+        Student male = studentGender(gender);
+        assertThat(male.toString(), containsString("He"));
+    }
+
+    @Test
+    public void femaleStudentHasMalePronounInToString() {
+        Student male = studentGender("female");
+        assertThat(male.toString(), containsString("She"));
+    }
+
+    private Student studentGender(String gender) {
+        return new Student("", new ArrayList<>() , 1.23, gender);
+    }
+
+
     @Ignore
     @Test
     public void allStudentAttributesAreIncludedInToString() {
