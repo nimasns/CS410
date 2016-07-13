@@ -10,7 +10,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 /**
  * Integration tests for the {@link Project2} main class.
  */
-public class Project1IT extends InvokeMainTestCase {
+public class Project2IT extends InvokeMainTestCase {
 
   /**
    * Invokes the main method of {@link Project2} with the given arguments.

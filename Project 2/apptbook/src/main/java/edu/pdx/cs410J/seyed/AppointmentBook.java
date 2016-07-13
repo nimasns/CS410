@@ -9,6 +9,7 @@ import java.util.Collection;
 
 /**
  * Created by Nima on 7/4/16.
+ *
  */
 
 public class AppointmentBook extends AbstractAppointmentBook {
@@ -16,9 +17,13 @@ public class AppointmentBook extends AbstractAppointmentBook {
     private Collection<Appointment> appointments = new ArrayList<>();
 
     public AppointmentBook(String owner) {
+
         this.owner = owner;
     }
 
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
     @Override
     public String getOwnerName() {
         return owner;

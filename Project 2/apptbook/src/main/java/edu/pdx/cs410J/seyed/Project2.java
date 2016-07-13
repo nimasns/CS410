@@ -2,17 +2,26 @@ package edu.pdx.cs410J.seyed;
 
 import edu.pdx.cs410J.AbstractAppointmentBook;
 import edu.pdx.cs410J.AppointmentBookDumper;
+import edu.pdx.cs410J.ParserException;
 
+import java.io.IOException;
+import java.io.*;
+import java.text.Format;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 
 /**
  * The main class for the CS410J appointment book Project
  */
 public class Project2 {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws ParseException {
     //Class c = AbstractAppointmentBook.class;  // Refer to one of Dave's classes so that we can be sure it is on the classpath
 
     if (args.length == 0) {
@@ -24,21 +33,34 @@ public class Project2 {
     String description = null;
     String beginDate = null;
     String beginTime = null;
+    Date beginDate1;
+    Date beginTime1;
     String endDate = null;
     String endTime = null;
+    String beginDateTime = null;
+    String endDateTime = null;
 
     boolean printFlag = false;
     boolean readmeFlag = false;
 
+    boolean textFlag = false;
+    String filePath = null;
+
     String dateFormat = "(0?[1-9]|[012][0-9]|3[01])/(0?[1-9]|[12][0-9])/(\\d{4}|\\d{2}) ([01]?[0-9]|2[0-3]):[0-5][0-9]";
+    SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm");
 
     //Storing infromation in the correct feilds
     for (String arg : args) {
       if (arg.startsWith("-README") && !readmeFlag) {
         readmeFlag = true;
         printReadme();
-      } else if (arg.startsWith("-print") && !printFlag) {
+      } else if (arg.startsWith("-textFile") && !textFlag) {
+        textFlag = true;
+      }else if (arg.startsWith("-print") && !printFlag) {
         printFlag = true;
+      } else if (textFlag && filePath == null && textFlag) {
+        textFlag = true;
+        filePath = arg;
       } else if (owner == null) {
         owner = arg;
       } else if (description == null) {
@@ -71,15 +93,60 @@ public class Project2 {
       errorMessage("Invalid begin time format!");
     } else if (!formatCheck(dateFormat, endDate + " " + endTime)) {
       errorMessage("Invalid end time format!");
+    } else if (textFlag && filePath == null) {
+      errorMessage("Missing File Path!");
     }
 
-    Appointment appointment = new Appointment(description, beginDate + " " + beginTime, endDate + " " + endTime);
+    beginDateTime = beginDate + " " + beginTime;
+    endDateTime = endDate + " " + endTime;
+
+    Date date = format.parse(beginDate + " " + beginTime);
+    System.out.println(date);
+
+    Appointment appointment = new Appointment(description, beginDateTime, endDateTime);
     AppointmentBook appointmentBook = new AppointmentBook(owner);
 
     if (printFlag) {
       System.out.println(appointmentBook.toString());
       System.out.println(appointment.toString());
     }
+
+    //Parsing
+    if(textFlag) {
+      TextParser textParser = new TextParser(filePath);
+      TextDumper textDumper = new TextDumper(filePath);
+      AbstractAppointmentBook parsedAppointment = new AppointmentBook(null);
+
+      try {
+        parsedAppointment = textParser.parse();
+      } catch (ParserException e) {
+        System.out.println(e);
+      }
+
+      if (Objects.equals(owner, parsedAppointment.getOwnerName())) {
+        parsedAppointment.addAppointment(appointment);
+
+        try {
+          textDumper.dump(parsedAppointment);
+        } catch (IOException e) {
+          System.out.println(e);
+        }
+      } else {
+        File file = new File(filePath);
+        if (file.exists()) {
+          appointmentBook.addAppointment(appointment);
+          System.out.println("Owner does not exist in the file");
+        } else {
+          appointmentBook.addAppointment(appointment);
+          try {
+            textDumper.dump(appointmentBook);
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+        }
+      }
+    }
+
     System.exit(1);
   }
 
@@ -91,8 +158,7 @@ public class Project2 {
   private static boolean formatCheck(String format, String time) {
     Pattern pattern = Pattern.compile(format);
     Matcher matcher = pattern.matcher(time);
-    boolean matches = matcher.matches();
-    return matches;
+    return matcher.matches();
   }
   private static void printReadme() {
     System.out.println("\n\n");

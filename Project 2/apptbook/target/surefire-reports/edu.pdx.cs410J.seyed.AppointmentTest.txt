@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: edu.pdx.cs410J.seyed.AppointmentTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.009 sec - in edu.pdx.cs410J.seyed.AppointmentTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.01 sec - in edu.pdx.cs410J.seyed.AppointmentTest

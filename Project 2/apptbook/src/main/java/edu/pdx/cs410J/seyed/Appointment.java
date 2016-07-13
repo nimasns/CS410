@@ -3,8 +3,10 @@ package edu.pdx.cs410J.seyed;
 import edu.pdx.cs410J.AbstractAppointment;
 import sun.security.krb5.internal.crypto.Des;
 
+import javax.lang.model.element.NestingKind;
 import javax.swing.*;
 import javax.swing.text.html.parser.Entity;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,6 +19,7 @@ public class Appointment extends AbstractAppointment {
     this.description = Description;
     this.BeginTime = BeginTime;
     this.EndTime = EndTime;
+
   }
 
   @Override
@@ -36,4 +39,14 @@ public class Appointment extends AbstractAppointment {
     return description;
     //return "This method is not implemented yet";
   }
+
+  /*@Override
+  public  Date getEndTime() {
+    return EndTime;
+  }
+
+  @Override
+  public Date getBeginTime() {
+    return BeginTime;
+  }*/
 }
