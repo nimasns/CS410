@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24fbd3be-62d7-442d-b97f-b660ba191faf" name="Default" comment="Parsing and Dumping is done&#10;Working on Date Format">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/TextDumper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/TextParser.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Project1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/edu/pdx/cs410J/seyed/Project1IT.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/it/java/edu/pdx/cs410J/seyed/Project1IT.java" afterPath="$PROJECT_DIR$/src/it/java/edu/pdx/cs410J/seyed/Project2IT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-sources.jar" afterPath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-sources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-test-sources.jar" afterPath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-test-sources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-tests.jar" afterPath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-tests.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Appointment.class" afterPath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Appointment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/AppointmentBook.class" afterPath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/AppointmentBook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Project2.class" afterPath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Project2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/original-apptbook-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/original-apptbook-1.0-SNAPSHOT.jar" />
+    <list default="true" id="24fbd3be-62d7-442d-b97f-b660ba191faf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/Appointment.java" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/Appointment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/AppointmentBook.java" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/AppointmentBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/Project2.java" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/Project2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
@@ -948,8 +932,16 @@
       <workItem from="1468111004765" duration="3968000" />
       <workItem from="1468192845829" duration="555000" />
       <workItem from="1468370077616" duration="2294000" />
-      <workItem from="1468430094346" duration="7200000" />
+      <workItem from="1468430094346" duration="7220000" />
     </task>
+    <task id="LOCAL-00001" summary="Parsing and Dumping is done&#10;Working on Date Format">
+      <created>1468438783038</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1468438783038</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -985,7 +977,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71722000" />
+    <option name="totallyTimeSpent" value="71742000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="23" width="1242" height="773" extended-state="0" />
