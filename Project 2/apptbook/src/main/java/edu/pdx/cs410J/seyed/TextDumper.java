@@ -28,7 +28,7 @@ public class TextDumper implements AppointmentBookDumper {
         Collection<Appointment> appointments = appointment.getAppointments();
 
         for (Appointment each : appointments) {
-            String save = appointment.getOwnerName() + ";" + each.getDescription() + ";" + each.getBeginTimeString() + ";" + each.getEndTimeString() + "\n";
+            String save = appointment.getOwnerName() + ";" + each.getDescription() + ";" + each.getBeginTime() + ";" + each.getEndTime() + "\n";
             fileWriter.write(save);
         }
         fileWriter.close();

@@ -6,7 +6,6 @@ import edu.pdx.cs410J.ParserException;
 
 import java.io.IOException;
 import java.io.*;
-import java.text.Format;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -33,12 +32,10 @@ public class Project2 {
     String description = null;
     String beginDate = null;
     String beginTime = null;
-    Date beginDate1;
-    Date beginTime1;
     String endDate = null;
     String endTime = null;
-    String beginDateTime = null;
-    String endDateTime = null;
+    Date beginDateTime;
+    Date endDateTime;
 
     boolean printFlag = false;
     boolean readmeFlag = false;
@@ -58,8 +55,7 @@ public class Project2 {
         textFlag = true;
       }else if (arg.startsWith("-print") && !printFlag) {
         printFlag = true;
-      } else if (textFlag && filePath == null && textFlag) {
-        textFlag = true;
+      } else if (textFlag && filePath == null) {
         filePath = arg;
       } else if (owner == null) {
         owner = arg;
@@ -77,7 +73,9 @@ public class Project2 {
     }
 
     //missing fields check
-    if (description == null) {
+    if (textFlag && filePath == null) {
+      errorMessage("Missing File Path!");
+    }else if (description == null) {
       errorMessage("Missing description field!");
     } else if (owner == null) {
       errorMessage("Missing owner field!");
@@ -93,15 +91,13 @@ public class Project2 {
       errorMessage("Invalid begin time format!");
     } else if (!formatCheck(dateFormat, endDate + " " + endTime)) {
       errorMessage("Invalid end time format!");
-    } else if (textFlag && filePath == null) {
-      errorMessage("Missing File Path!");
     }
 
-    beginDateTime = beginDate + " " + beginTime;
-    endDateTime = endDate + " " + endTime;
+    //beginDateTime = beginDate + " " + beginTime;
+    //endDateTime = endDate + " " + endTime;
 
-    Date date = format.parse(beginDate + " " + beginTime);
-    System.out.println(date);
+    beginDateTime = format.parse(beginDate + " " + beginTime);
+    endDateTime = format.parse(endDate + " " + endTime);
 
     Appointment appointment = new Appointment(description, beginDateTime, endDateTime);
     AppointmentBook appointmentBook = new AppointmentBook(owner);
@@ -112,7 +108,7 @@ public class Project2 {
     }
 
     //Parsing
-    if(textFlag) {
+    if(textFlag && filePath != null) {
       TextParser textParser = new TextParser(filePath);
       TextDumper textDumper = new TextDumper(filePath);
       AbstractAppointmentBook parsedAppointment = new AppointmentBook(null);
@@ -151,7 +147,7 @@ public class Project2 {
   }
 
   private static void errorMessage(String error) {
-    System.out.print(error);
+    System.out.println(error);
     System.exit(3);
   }
 
@@ -176,6 +172,7 @@ public class Project2 {
     System.out.println("endTime           - When the appt ends (24-hour time)");
     System.out.println("-------------\n");
     System.out.println("Options are (options may appear in any order");
+    System.out.println("-textFile file     - Where to read/write the appointment book");
     System.out.println("-print            - Prints a description of the new appointment");
     System.out.println("-README           - Prints a README for this project and exits");
     System.out.println("Date and time should be in the format: mm/dd/yyyy hh:mm \n");

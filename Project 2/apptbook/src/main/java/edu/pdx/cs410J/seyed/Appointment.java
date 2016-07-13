@@ -12,25 +12,35 @@ import java.util.regex.Pattern;
 
 public class Appointment extends AbstractAppointment {
   private String description;
-  private String BeginTime;
-  private String EndTime;
+  private String BeginTimeString;
+  private String EndTimeString;
+  private Date BeginTime;
+  private Date EndTime;
 
-  public Appointment(String Description, String BeginTime, String EndTime){
+  public Appointment(String Description, Date BeginTime, Date EndTime){
     this.description = Description;
+    //this.BeginTimeString = BeginTime;
+    //this.EndTimeString = EndTime;
     this.BeginTime = BeginTime;
     this.EndTime = EndTime;
 
   }
 
+  public Appointment(String Description, String BeginTimeString, String EndTimeString) {
+    this.description = Description;
+    this.BeginTimeString = BeginTimeString;
+    this.EndTimeString = EndTimeString;
+  }
+
   @Override
   public String getBeginTimeString() {
-    return BeginTime;
+    return BeginTimeString;
     //throw new UnsupportedOperationException("This method is not implemented yet");
   }
 
   @Override
   public String getEndTimeString() {
-    return EndTime;
+    return EndTimeString;
     //throw new UnsupportedOperationException("This method is not implemented yet");
   }
 
@@ -40,7 +50,7 @@ public class Appointment extends AbstractAppointment {
     //return "This method is not implemented yet";
   }
 
-  /*@Override
+  @Override
   public  Date getEndTime() {
     return EndTime;
   }
@@ -48,5 +58,5 @@ public class Appointment extends AbstractAppointment {
   @Override
   public Date getBeginTime() {
     return BeginTime;
-  }*/
+  }
 }

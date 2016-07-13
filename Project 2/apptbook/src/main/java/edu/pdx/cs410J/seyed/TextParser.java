@@ -16,10 +16,10 @@ import java.io.IOException;
 public class TextParser implements AppointmentBookParser{
 
     private String fileName;
-    AppointmentBook appointmentBook = new AppointmentBook(null);
+    public AppointmentBook appointmentBook = new AppointmentBook(null);
 
 
-    public TextParser(String fileName) {
+    TextParser(String fileName) {
         this.fileName = fileName;
     }
 
@@ -28,7 +28,7 @@ public class TextParser implements AppointmentBookParser{
         try {
             FileReader input = new FileReader(this.fileName);
             BufferedReader bufferedReader = new BufferedReader(input);
-            String oneLine = null;
+            String oneLine;
 
             while ((oneLine = bufferedReader.readLine()) != null) {
                 String[] parsedAppointment = oneLine.split(";");
