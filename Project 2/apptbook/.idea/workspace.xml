@@ -4,21 +4,9 @@
     <list default="true" id="24fbd3be-62d7-442d-b97f-b660ba191faf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-sources.jar" afterPath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-sources.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-test-sources.jar" afterPath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-test-sources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-tests.jar" afterPath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-tests.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Appointment.class" afterPath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Appointment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Project2.class" afterPath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Project2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/TextDumper.class" afterPath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/TextDumper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/TextParser.class" afterPath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/TextParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/original-apptbook-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/original-apptbook-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/edu/pdx/cs410J/seyed/AppointmentTest.class" afterPath="$PROJECT_DIR$/target/test-classes/edu/pdx/cs410J/seyed/AppointmentTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/Appointment.java" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/Appointment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/Project2.java" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/Project2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/TextDumper.java" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/TextDumper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/TextParser.java" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/TextParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/seyed/AppointmentTest.java" afterPath="$PROJECT_DIR$/src/test/java/edu/pdx/cs410J/seyed/AppointmentTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.pdx.cs410J.seyed.AppointmentTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.pdx.cs410J.seyed.AppointmentTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/edu.pdx.cs410J.seyed.AppointmentTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/edu.pdx.cs410J.seyed.AppointmentTest.txt" />
     </list>
@@ -867,7 +855,7 @@
       <workItem from="1468111004765" duration="3968000" />
       <workItem from="1468192845829" duration="555000" />
       <workItem from="1468370077616" duration="2294000" />
-      <workItem from="1468430094346" duration="11799000" />
+      <workItem from="1468430094346" duration="12476000" />
     </task>
     <task id="LOCAL-00001" summary="Parsing and Dumping is done&#10;Working on Date Format">
       <created>1468438783038</created>
@@ -912,7 +900,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76321000" />
+    <option name="totallyTimeSpent" value="76998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="588" y="23" width="692" height="773" extended-state="0" />
