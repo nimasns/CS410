@@ -22,13 +22,13 @@ public class TextDumper implements AppointmentBookDumper {
     }
 
     @Override
-    public void dump(AbstractAppointmentBook appointment) throws IOException {
+    public void dump(AbstractAppointmentBook abstractAppointmentBook) throws IOException {
         File file = new File(fileName);
         FileWriter fileWriter = new FileWriter(file, false);
-        Collection<Appointment> appointments = appointment.getAppointments();
+        Collection<Appointment> appointments = abstractAppointmentBook.getAppointments();
 
-        for (Appointment each : appointments) {
-            String save = appointment.getOwnerName() + ";" + each.getDescription() + ";" + each.getBeginTime() + ";" + each.getEndTime() + "\n";
+        for (Appointment app : appointments) {
+            String save = abstractAppointmentBook.getOwnerName() + ";" + app.getDescription() + ";" + app.getBeginTimeString() + ";" + app.getEndTimeString() + "\n";
             fileWriter.write(save);
         }
         fileWriter.close();

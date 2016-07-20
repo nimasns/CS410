@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.ParseException;
 
 /**
  * Created by Nima on 7/8/16.
@@ -16,11 +17,13 @@ import java.io.IOException;
 public class TextParser implements AppointmentBookParser{
 
     private String fileName;
-    public AppointmentBook appointmentBook = new AppointmentBook(null);
+    private String owner;
+    public AppointmentBook appointmentBook = new AppointmentBook(owner);
 
 
-    TextParser(String fileName) {
+    public TextParser(String fileName) {
         this.fileName = fileName;
+        owner = null;
     }
 
     @Override
@@ -40,6 +43,8 @@ public class TextParser implements AppointmentBookParser{
             throw new ParserException("FIle not Found.");
         } catch (IOException e) {
             throw new ParserException("Invalid file.");
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
 
         return appointmentBook;

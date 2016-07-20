@@ -17,7 +17,6 @@ public class AppointmentBook extends AbstractAppointmentBook {
     private Collection<Appointment> appointments = new ArrayList<>();
 
     public AppointmentBook(String owner) {
-
         this.owner = owner;
     }
 
