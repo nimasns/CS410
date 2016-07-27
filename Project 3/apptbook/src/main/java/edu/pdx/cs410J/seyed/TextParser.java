@@ -17,13 +17,11 @@ import java.text.ParseException;
 public class TextParser implements AppointmentBookParser{
 
     private String fileName;
-    private String owner;
-    public AppointmentBook appointmentBook = new AppointmentBook(owner);
+    AppointmentBook appointmentBook = new AppointmentBook(null);
 
 
     public TextParser(String fileName) {
         this.fileName = fileName;
-        owner = null;
     }
 
     @Override
@@ -35,16 +33,18 @@ public class TextParser implements AppointmentBookParser{
 
             while ((oneLine = bufferedReader.readLine()) != null) {
                 String[] parsedAppointment = oneLine.split(";");
-                appointmentBook.setOwner(parsedAppointment[0]);
+                if(parsedAppointment.length != 4) {
+                    throw new ParserException("Format is invalid 1");
+                }
+
                 Appointment appointment = new Appointment(parsedAppointment[1], parsedAppointment[2], parsedAppointment[3]);
                 appointmentBook.addAppointment(appointment);
+                appointmentBook.setOwner(parsedAppointment[0]);
             }
-        } catch (FileNotFoundException e) {
-            throw new ParserException("FIle not Found.");
         } catch (IOException e) {
-            throw new ParserException("Invalid file.");
+            throw new ParserException("Format is invalid 2");
         } catch (ParseException e) {
-            e.printStackTrace();
+            throw new ParserException("Format is invalid 3");
         }
 
         return appointmentBook;

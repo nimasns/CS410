@@ -6,7 +6,6 @@ import edu.pdx.cs410J.ParserException;
 
 import java.io.IOException;
 import java.io.*;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -44,9 +43,6 @@ public class Project3 {
     boolean textFlag = false;
     String filePath = null;
 
-    boolean prettyFlag = false;
-    String pFilePath = null;
-
     String dateFormat = "(0?[1-9]|[012][0-9]|3[01])/(0?[1-9]|[12][0-9])/(\\d{4}|\\d{2}) ([01]?[0-9]|2[0-3]):[0-5][0-9]";
     SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm");
 
@@ -59,12 +55,8 @@ public class Project3 {
         textFlag = true;
       }else if (arg.startsWith("-print") && !printFlag) {
         printFlag = true;
-      }else if(arg.startsWith("-pretty") && !prettyFlag) {
-        prettyFlag = true;
       } else if (textFlag && filePath == null) {
         filePath = arg;
-      } else if (prettyFlag && pFilePath == null) {
-        pFilePath = arg;
       } else if (owner == null) {
         owner = arg;
       } else if (description == null) {
@@ -83,10 +75,10 @@ public class Project3 {
     //missing fields check
     if (textFlag && filePath == null) {
       errorMessage("Missing File Path!");
-    }else if (owner == null) {
-      errorMessage("Missing owner field!");
-    } else if (description == null) {
+    }else if (description == null) {
       errorMessage("Missing description field!");
+    } else if (owner == null) {
+      errorMessage("Missing owner field!");
     } else if (beginDate == null) {
       errorMessage("Missing begin date field!");
     } else if (beginTime == null) {
@@ -101,38 +93,18 @@ public class Project3 {
       errorMessage("Invalid end time format!");
     }
 
-    String begin = beginDate + " " + beginTime;
-    String end = endDate + " " + endTime;
+    //beginDateTime = beginDate + " " + beginTime;
+    //endDateTime = endDate + " " + endTime;
+    StringBuffer strbuff = new StringBuffer();
+    strbuff.append(beginDate).append(" ").append(beginTime);
+    beginDateTime = format.parse(strbuff.toString().trim());
 
-    beginDateTime = format.parse(begin);
-    endDateTime = format.parse(end);
+    //beginDateTime = format.parse(beginDate + " " + beginTime);
+    endDateTime = format.parse(endDate + " " + endTime);
 
+    //Appointment appointment = new Appointment(description, beginDate + " " + beginTime, endDate + " " + endTime);
     Appointment appointment = new Appointment(description, beginDateTime, endDateTime);
     AppointmentBook appointmentBook = new AppointmentBook(owner);
-
-    if (prettyFlag) {
-      PrettyPrinter prettyPrint = new PrettyPrinter(pFilePath);
-
-      if (pFilePath.equals("-")) {
-        System.out.println();
-        prettyPrint.screendump(appointmentBook);
-      } else {
-        File aFile = new File(pFilePath);
-        if (aFile.exists() && !aFile.isDirectory()) {
-          try {
-            prettyPrint.dump(appointmentBook);
-          } catch (IOException e) {
-            System.out.println("Pretty Print input error.");
-          }
-        } else {
-          try {
-            prettyPrint.dump(appointmentBook);
-          } catch (IOException e) {
-            System.out.println("Pretty Print input error.");
-          }
-        }
-      }
-    }
 
     if (printFlag) {
       System.out.println(appointmentBook.toString());
@@ -143,7 +115,7 @@ public class Project3 {
     if(textFlag && filePath != null) {
       TextParser textParser = new TextParser(filePath);
       TextDumper textDumper = new TextDumper(filePath);
-      AppointmentBook parsedAppointment = new AppointmentBook(null);
+      AbstractAppointmentBook parsedAppointment = new AppointmentBook(owner);
 
       try {
         parsedAppointment = (AppointmentBook) textParser.parse();
@@ -151,7 +123,7 @@ public class Project3 {
         System.out.println(e);
       }
 
-      if (!Objects.equals(owner, parsedAppointment.getOwnerName())) {
+      if (Objects.equals(owner, parsedAppointment.getOwnerName())) {
         parsedAppointment.addAppointment(appointment);
 
         try {
@@ -204,11 +176,9 @@ public class Project3 {
     System.out.println("endTime           - When the appt ends (24-hour time)");
     System.out.println("-------------\n");
     System.out.println("Options are (options may appear in any order");
-    System.out.println("-pretty File       - Pretty print the appointment book to");
-    System.out.println("                     a text file or standard out (file -)");
     System.out.println("-textFile file     - Where to read/write the appointment book");
-    System.out.println("-print             - Prints a description of the new appointment");
-    System.out.println("-README            - Prints a README for this project and exits");
+    System.out.println("-print            - Prints a description of the new appointment");
+    System.out.println("-README           - Prints a README for this project and exits");
     System.out.println("Date and time should be in the format: mm/dd/yyyy hh:mm \n");
     System.exit(2);
   }
