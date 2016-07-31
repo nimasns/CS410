@@ -33,8 +33,10 @@ public class Project3 {
     String description = null;
     String beginDate = null;
     String beginTime = null;
+    String begin = null;
     String endDate = null;
     String endTime = null;
+    String end = null;
     Date beginDateTime;
     Date endDateTime;
 
@@ -47,8 +49,8 @@ public class Project3 {
     boolean prettyFlag = false;
     String pFilePath = null;
 
-    String dateFormat = "(0?[1-9]|[012][0-9]|3[01])/(0?[1-9]|[12][0-9])/(\\d{4}|\\d{2}) ([01]?[0-9]|2[0-3]):[0-5][0-9]";
-    SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm");
+    String dateFormat = "(0?[1-9]|[012][0-9]|3[01])/(0?[1-9]|[12][0-9])/(\\d{4}|\\d{2}) ([01]?[0-9]|2[0-3]):[0-5][0-9] (am|AM|pm|PM)";
+    SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
 
     //Storing infromation in the correct feilds
     for (String arg : args) {
@@ -57,9 +59,9 @@ public class Project3 {
         printReadme();
       } else if (arg.startsWith("-textFile") && !textFlag) {
         textFlag = true;
-      }else if (arg.startsWith("-print") && !printFlag) {
+      } else if (arg.startsWith("-print") && !printFlag) {
         printFlag = true;
-      }else if(arg.startsWith("-pretty") && !prettyFlag) {
+      } else if (arg.startsWith("-pretty") && !prettyFlag) {
         prettyFlag = true;
       } else if (textFlag && filePath == null) {
         filePath = arg;
@@ -73,17 +75,21 @@ public class Project3 {
         beginDate = arg;
       } else if (beginTime == null) {
         beginTime = arg;
+      } else if (begin == null) {
+        begin = arg;
       } else if (endDate == null) {
         endDate = arg;
       } else if (endTime == null) {
         endTime = arg;
+      } else if (end == null) {
+        end = arg;
       }
     }
 
     //missing fields check
     if (textFlag && filePath == null) {
       errorMessage("Missing File Path!");
-    }else if (owner == null) {
+    } else if (owner == null) {
       errorMessage("Missing owner field!");
     } else if (description == null) {
       errorMessage("Missing description field!");
@@ -91,25 +97,29 @@ public class Project3 {
       errorMessage("Missing begin date field!");
     } else if (beginTime == null) {
       errorMessage("Missing begin time field!");
+    } else if (begin == null) {
+      errorMessage("Missing begin time of day");
     } else if (endDate == null) {
       errorMessage("Missing end date field!");
     } else if (endTime == null) {
       errorMessage("Missing end time field!");
-    } else if (!formatCheck(dateFormat, beginDate + " " + beginTime)) {
+    } else if (end == null) {
+      errorMessage("Missing end time of day");
+    } else if (!formatCheck(dateFormat, beginDate + " " + beginTime + " " + begin)) {
       errorMessage("Invalid begin time format!");
-    } else if (!formatCheck(dateFormat, endDate + " " + endTime)) {
+    } else if (!formatCheck(dateFormat, endDate + " " + endTime + " " + end)) {
       errorMessage("Invalid end time format!");
     }
 
-    String begin = beginDate + " " + beginTime;
-    String end = endDate + " " + endTime;
-
-    beginDateTime = format.parse(begin);
-    endDateTime = format.parse(end);
+    beginDateTime = format.parse(beginDate + " " + beginTime + " " + begin);
+    endDateTime = format.parse(endDate + " " + endTime + " " + end);
 
     AppointmentBook appointmentBook = new AppointmentBook(owner);
     Appointment appointment = new Appointment(description, beginDateTime, endDateTime);
 
+
+    //*******
+    //Pretty Printing
     if (prettyFlag) {
       PrettyPrinter prettyPrint = new PrettyPrinter(pFilePath);
 
@@ -134,11 +144,15 @@ public class Project3 {
       }
     }
 
+
+    //********
+    //Screen printing
     if (printFlag) {
       System.out.println(appointmentBook.toString());
       System.out.println(appointment.toString());
     }
 
+    //***********
     //Parsing
     if(textFlag && filePath != null) {
       TextParser textParser = new TextParser(filePath);
