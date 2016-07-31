@@ -13,7 +13,7 @@ import java.util.Collection;
  */
 
 public class AppointmentBook extends AbstractAppointmentBook {
-    private String owner;
+    private String owner = null;
     private Collection<Appointment> appointments = new ArrayList<>();
 
     public AppointmentBook(String owner) {

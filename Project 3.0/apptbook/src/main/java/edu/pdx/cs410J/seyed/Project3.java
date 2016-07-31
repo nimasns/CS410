@@ -107,8 +107,8 @@ public class Project3 {
     beginDateTime = format.parse(begin);
     endDateTime = format.parse(end);
 
-    Appointment appointment = new Appointment(description, beginDateTime, endDateTime);
     AppointmentBook appointmentBook = new AppointmentBook(owner);
+    Appointment appointment = new Appointment(description, beginDateTime, endDateTime);
 
     if (prettyFlag) {
       PrettyPrinter prettyPrint = new PrettyPrinter(pFilePath);
@@ -143,7 +143,7 @@ public class Project3 {
     if(textFlag && filePath != null) {
       TextParser textParser = new TextParser(filePath);
       TextDumper textDumper = new TextDumper(filePath);
-      AppointmentBook parsedAppointment = new AppointmentBook(null);
+      AppointmentBook parsedAppointment = new AppointmentBook(owner);
 
       try {
         parsedAppointment = (AppointmentBook) textParser.parse();
@@ -151,7 +151,7 @@ public class Project3 {
         System.out.println(e);
       }
 
-      if (!Objects.equals(owner, parsedAppointment.getOwnerName())) {
+      if (Objects.equals(owner, parsedAppointment.getOwnerName())) {
         parsedAppointment.addAppointment(appointment);
 
         try {
