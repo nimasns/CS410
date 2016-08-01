@@ -49,7 +49,8 @@ public class Project3 {
     boolean prettyFlag = false;
     String pFilePath = null;
 
-    String dateFormat = "(0?[1-9]|[012][0-9]|3[01])/(0?[1-9]|[12][0-9])/(\\d{4}|\\d{2}) ([01]?[0-9]|2[0-3]):[0-5][0-9] (am|AM|pm|PM)";
+    //String dateFormat = "(0?[1-9]|[012][0-9]|3[01])/(0?[1-9]|[12][0-9])/(\\d{4}|\\d{2}) ([01]?[0-9]|2[0-3]):[0-5][0-9] (am|AM|pm|PM)";
+    String dateFormat = "(0?[1-9]|[012][0-9]|3[01])/(0?[1-9]|[12][0-9])/(\\d{4}|\\d{2}) ([0]?[0-9]|1[0-2]):[0-5][0-9] (am|AM|pm|PM)";
     SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
 
     //Storing infromation in the correct feilds
@@ -118,40 +119,6 @@ public class Project3 {
     Appointment appointment = new Appointment(description, beginDateTime, endDateTime);
 
 
-    //*******
-    //Pretty Printing
-    if (prettyFlag) {
-      PrettyPrinter prettyPrint = new PrettyPrinter(pFilePath);
-
-      if (pFilePath.equals("-")) {
-        System.out.println();
-        prettyPrint.screendump(appointmentBook);
-      } else {
-        File aFile = new File(pFilePath);
-        if (aFile.exists() && !aFile.isDirectory()) {
-          try {
-            prettyPrint.dump(appointmentBook);
-          } catch (IOException e) {
-            System.out.println("Pretty Print input error.");
-          }
-        } else {
-          try {
-            prettyPrint.dump(appointmentBook);
-          } catch (IOException e) {
-            System.out.println("Pretty Print input error.");
-          }
-        }
-      }
-    }
-
-
-    //********
-    //Screen printing
-    if (printFlag) {
-      System.out.println(appointmentBook.toString());
-      System.out.println(appointment.toString());
-    }
-
     //***********
     //Parsing
     if(textFlag && filePath != null) {
@@ -189,6 +156,44 @@ public class Project3 {
       }
     }
 
+
+    //*******
+    //Pretty Printing
+    if (prettyFlag) {
+      PrettyPrinter prettyPrint = new PrettyPrinter(pFilePath);
+
+      if(!textFlag) {
+        appointmentBook.addAppointment(appointment);
+      }
+      if (pFilePath.equals("-")) {
+        System.out.println();
+        prettyPrint.screendump(appointmentBook);
+      } else {
+        File aFile = new File(pFilePath);
+        if (aFile.exists() && !aFile.isDirectory()) {
+          try {
+            prettyPrint.dump(appointmentBook);
+          } catch (IOException e) {
+            System.out.println("Pretty Print input error.");
+          }
+        } else {
+          try {
+            prettyPrint.dump(appointmentBook);
+          } catch (IOException e) {
+            System.out.println("Pretty Print input error.");
+          }
+        }
+      }
+    }
+
+
+    //********
+    //Screen printing
+    if (printFlag) {
+      System.out.println(appointmentBook.toString());
+      System.out.println(appointment.toString());
+    }
+
     System.exit(1);
   }
 
@@ -214,8 +219,8 @@ public class Project3 {
     System.out.println("args are (in this order):");
     System.out.println("owner             - The person whose owns the appt book");
     System.out.println("description       - A description of the appointment");
-    System.out.println("beginTime         - When the appt begins (24-hour time)");
-    System.out.println("endTime           - When the appt ends (24-hour time)");
+    System.out.println("beginTime         - When the appt begins (12-hour time)");
+    System.out.println("endTime           - When the appt ends (12-hour time)");
     System.out.println("-------------\n");
     System.out.println("Options are (options may appear in any order");
     System.out.println("-pretty File       - Pretty print the appointment book to");

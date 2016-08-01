@@ -5,8 +5,9 @@ import edu.pdx.cs410J.AbstractAppointment;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Comparator;
 
-public class Appointment extends AbstractAppointment {
+public class Appointment extends AbstractAppointment implements Comparable<Appointment> {
   private String description;
   private Date beginTime;
   private Date endTime;
@@ -57,4 +58,35 @@ public class Appointment extends AbstractAppointment {
   public Date getBeginTime() {
     return beginTime;
   }
+
+  @Override
+  public int compareTo(Appointment o) {
+    try {
+      if (this.beginTime == null) {
+        throw new NullPointerException("No stored Start Time and Date.");
+      }
+      if (this.endTime == null) {
+        throw new NullPointerException("No stored Start Time and Date.");
+      }
+      long difference = this.beginTime.getTime() - o.endTime.getTime();
+
+      if (difference > 0) {
+        return 1;
+      }
+
+      if (difference < 0) {
+        return -1;
+      }
+
+      //else they are equal
+      if (difference == 0 ) {
+        return this.description.compareTo(o.description);
+      }
+
+    } catch (NullPointerException e) {
+      System.out.println("We found a Null Pointer in compareTo");
+    }
+    return 0;
+  }
+
 }
