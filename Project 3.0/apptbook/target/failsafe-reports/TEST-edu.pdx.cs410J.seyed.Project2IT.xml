@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.pdx.cs410J.seyed.AppointmentTest" time="0.002" tests="8" errors="0" skipped="8" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="edu.pdx.cs410J.seyed.Project2IT" time="0.069" tests="9" errors="0" skipped="0" failures="7">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/jre/lib"/>
@@ -61,28 +61,62 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|localhost|*.localhost|127.0.0.1"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="initiallyAllAppointmentsHaveTheSameDescription" classname="edu.pdx.cs410J.seyed.AppointmentTest" time="0">
-    <skipped/>
+  <testcase name="missingDescription" classname="edu.pdx.cs410J.seyed.Project2IT" time="0.059">
+    <failure message="&#10;Expected: a string containing &quot;Missing description field!&quot;&#10;     but: was &quot;&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+
+Expected: a string containing "Missing description field!"
+     but: was ""
+	at edu.pdx.cs410J.seyed.Project2IT.missingDescription(Project2IT.java:46)
+</failure>
   </testcase>
-  <testcase name="AppointmentWithDescription" classname="edu.pdx.cs410J.seyed.AppointmentTest" time="0">
-    <skipped/>
+  <testcase name="testNoCommandLineArguments" classname="edu.pdx.cs410J.seyed.Project2IT" time="0"/>
+  <testcase name="IncorrectBeginTimeFormat" classname="edu.pdx.cs410J.seyed.Project2IT" time="0.001">
+    <failure message="&#10;Expected: a string containing &quot;Invalid begin time format!&quot;&#10;     but: was &quot;&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+
+Expected: a string containing "Invalid begin time format!"
+     but: was ""
+	at edu.pdx.cs410J.seyed.Project2IT.IncorrectBeginTimeFormat(Project2IT.java:76)
+</failure>
   </testcase>
-  <testcase name="AppointmentWithEndtTime" classname="edu.pdx.cs410J.seyed.AppointmentTest" time="0">
-    <skipped/>
+  <testcase name="missingEndDate" classname="edu.pdx.cs410J.seyed.Project2IT" time="0.002">
+    <failure message="&#10;Expected: a string containing &quot;Missing end date field!&quot;&#10;     but: was &quot;&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+
+Expected: a string containing "Missing end date field!"
+     but: was ""
+	at edu.pdx.cs410J.seyed.Project2IT.missingEndDate(Project2IT.java:64)
+</failure>
   </testcase>
-  <testcase name="forProject2ItIsOkayIfGetBeginTimeReturnsNull" classname="edu.pdx.cs410J.seyed.AppointmentTest" time="0">
-    <skipped/>
+  <testcase name="missingEndTime" classname="edu.pdx.cs410J.seyed.Project2IT" time="0.001">
+    <failure message="&#10;Expected: a string containing &quot;Missing end time field!&quot;&#10;     but: was &quot;&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+
+Expected: a string containing "Missing end time field!"
+     but: was ""
+	at edu.pdx.cs410J.seyed.Project2IT.missingEndTime(Project2IT.java:70)
+</failure>
   </testcase>
-  <testcase name="getBeginTimeStringNeedsToBeImplemented" classname="edu.pdx.cs410J.seyed.AppointmentTest" time="0">
-    <skipped/>
+  <testcase name="missingBeginDate" classname="edu.pdx.cs410J.seyed.Project2IT" time="0.001">
+    <failure message="&#10;Expected: a string containing &quot;Missing begin date field!&quot;&#10;     but: was &quot;&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+
+Expected: a string containing "Missing begin date field!"
+     but: was ""
+	at edu.pdx.cs410J.seyed.Project2IT.missingBeginDate(Project2IT.java:52)
+</failure>
   </testcase>
-  <testcase name="AppointmentWithEndtTimeString" classname="edu.pdx.cs410J.seyed.AppointmentTest" time="0">
-    <skipped/>
+  <testcase name="missingBeginTime" classname="edu.pdx.cs410J.seyed.Project2IT" time="0.001">
+    <failure message="&#10;Expected: a string containing &quot;Missing begin time field!&quot;&#10;     but: was &quot;&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+
+Expected: a string containing "Missing begin time field!"
+     but: was ""
+	at edu.pdx.cs410J.seyed.Project2IT.missingBeginTime(Project2IT.java:58)
+</failure>
   </testcase>
-  <testcase name="AppointmentWithStartTimeString" classname="edu.pdx.cs410J.seyed.AppointmentTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase name="AppointmentWithStartTime" classname="edu.pdx.cs410J.seyed.AppointmentTest" time="0">
-    <skipped/>
+  <testcase name="testReadmeCommand" classname="edu.pdx.cs410J.seyed.Project2IT" time="0.001"/>
+  <testcase name="IncorrectEndTimeFormat" classname="edu.pdx.cs410J.seyed.Project2IT" time="0.001">
+    <failure message="&#10;Expected: a string containing &quot;Invalid end time format!&quot;&#10;     but: was &quot;&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+
+Expected: a string containing "Invalid end time format!"
+     but: was ""
+	at edu.pdx.cs410J.seyed.Project2IT.IncorrectEndTimeFormat(Project2IT.java:82)
+</failure>
   </testcase>
 </testsuite>

@@ -66,7 +66,7 @@ public class Appointment extends AbstractAppointment implements Comparable<Appoi
         throw new NullPointerException("No stored Start Time and Date.");
       }
       if (this.endTime == null) {
-        throw new NullPointerException("No stored Start Time and Date.");
+        throw new NullPointerException("No stored end Time and Date.");
       }
       long difference = this.beginTime.getTime() - o.endTime.getTime();
 
@@ -78,13 +78,13 @@ public class Appointment extends AbstractAppointment implements Comparable<Appoi
         return -1;
       }
 
-      //else they are equal
+      //they are equal
       if (difference == 0 ) {
         return this.description.compareTo(o.description);
       }
 
     } catch (NullPointerException e) {
-      System.out.println("We found a Null Pointer in compareTo");
+      System.out.println("Found a Null Pointer in compareTo");
     }
     return 0;
   }

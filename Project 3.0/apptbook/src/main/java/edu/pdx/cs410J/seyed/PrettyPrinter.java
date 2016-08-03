@@ -29,7 +29,7 @@ public class PrettyPrinter implements AppointmentBookDumper {
 
         Collection<Appointment> appointments = abstractAppointmentBook.getAppointments();
 
-        SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm");
+        SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
         Date beginDate = null;
         Date endDate = null;
 
@@ -60,7 +60,7 @@ public class PrettyPrinter implements AppointmentBookDumper {
 
     public void screendump(AbstractAppointmentBook abstractAppointmentBook) {
         Collection<Appointment> appointments = abstractAppointmentBook.getAppointments();
-        SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm");
+        SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm a");
         Date beginTime = null;
         Date endTime = null;
 
@@ -68,10 +68,8 @@ public class PrettyPrinter implements AppointmentBookDumper {
         System.out.print(abstractAppointmentBook.getOwnerName());
         System.out.print("\n\n------------------------------\nAppointments\n");
         for (Appointment app : appointments) {
-            System.out.print(app.getBeginTimeString());
             try {
                 beginTime = format.parse(app.getBeginTimeString());
-                System.out.print(app.getBeginTimeString());
             } catch (ParseException e) {
                 System.out.println("Date format incorrect");
             }
@@ -80,8 +78,7 @@ public class PrettyPrinter implements AppointmentBookDumper {
             } catch (ParseException e) {
                 System.out.println("Date format incorrect");
             }
-            System.out.println("\nEnd TIME:            " + endTime.getTime());
-            System.out.println("\nBegin TIME:            " + beginTime.getTime());
+
             int duration = (int) ((endTime.getTime() - beginTime.getTime()) / (1000*60));
 
             String aline = "Description: " + app.getDescription() + "\nStart Time: " + app.getBeginTimeString()

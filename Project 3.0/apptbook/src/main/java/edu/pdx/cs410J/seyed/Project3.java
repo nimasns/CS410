@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.lang.Error;
 
 
 /**
@@ -58,30 +59,43 @@ public class Project3 {
       if (arg.startsWith("-README") && !readmeFlag) {
         readmeFlag = true;
         printReadme();
+
       } else if (arg.startsWith("-textFile") && !textFlag) {
         textFlag = true;
+
       } else if (arg.startsWith("-print") && !printFlag) {
         printFlag = true;
+
       } else if (arg.startsWith("-pretty") && !prettyFlag) {
         prettyFlag = true;
+
       } else if (textFlag && filePath == null) {
         filePath = arg;
+
       } else if (prettyFlag && pFilePath == null) {
         pFilePath = arg;
+
       } else if (owner == null) {
         owner = arg;
+
       } else if (description == null) {
         description = arg;
+
       } else if (beginDate == null) {
         beginDate = arg;
+
       } else if (beginTime == null) {
         beginTime = arg;
+
       } else if (begin == null) {
         begin = arg;
+
       } else if (endDate == null) {
         endDate = arg;
+
       } else if (endTime == null) {
         endTime = arg;
+
       } else if (end == null) {
         end = arg;
       }

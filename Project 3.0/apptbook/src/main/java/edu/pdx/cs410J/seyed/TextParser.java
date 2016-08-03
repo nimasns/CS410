@@ -40,7 +40,7 @@ public class TextParser implements AppointmentBookParser{
                 appointmentBook.addAppointment(appointment);
             }
         } catch (FileNotFoundException e) {
-            throw new ParserException("FIle not Found.");
+            throw new ParserException("File not Found. Creating a new file");
         } catch (IOException e) {
             throw new ParserException("Invalid file.");
         } catch (ParseException e) {
