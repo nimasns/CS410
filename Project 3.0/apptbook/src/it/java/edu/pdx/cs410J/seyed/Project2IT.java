@@ -27,7 +27,7 @@ public class Project2IT extends InvokeMainTestCase {
   @Test
   public void testNoCommandLineArguments() {
     MainMethodResult result = invokeMain();
-    assertThat(result.getExitCode(), equalTo(1));
+    assertThat(result.getExitCode(), equalTo(3));
     assertThat(result.getErr(), containsString("Missing command line arguments"));
   }
 
@@ -72,13 +72,13 @@ public class Project2IT extends InvokeMainTestCase {
 
   @Test
   public void IncorrectBeginTimeFormat() {
-    MainMethodResult result = invokeMain(Project3.class, "Owner", "Description", "5/215", "12:30", "5/12/2015", "1:00");
+    MainMethodResult result = invokeMain(Project3.class, "Owner", "Description", "5/215", "12:30", "5/12/2015", "am", "1:00");
     assertThat(result.getErr(), containsString("Invalid begin time format!"));
   }
 
   @Test
   public void IncorrectEndTimeFormat() {
-    MainMethodResult result = invokeMain(Project3.class, "Owner", "Description", "5/2/15", "12:30", "5/122015", "1:00");
+    MainMethodResult result = invokeMain(Project3.class, "Owner", "Description", "5/2/15", "12:30", "5/122015", "1:00" , "pm");
     assertThat(result.getErr(), containsString("Invalid end time format!"));
   }
 }
