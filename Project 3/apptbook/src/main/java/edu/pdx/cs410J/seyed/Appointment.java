@@ -14,8 +14,6 @@ import java.util.regex.Pattern;
 
 public class Appointment extends AbstractAppointment {
   private String description;
-  //private String BeginTimeString;
-  //private String EndTimeString;
   private Date BeginTime;
   private Date EndTime;
 

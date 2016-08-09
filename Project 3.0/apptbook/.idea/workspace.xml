@@ -30,26 +30,8 @@
     </list>
     <list id="8b1eb13a-0b74-42a0-9c64-c58a0a0ba48b" name="Project 0" comment="" />
     <list id="a283a587-9ea6-41ca-8642-f6b39a311c4a" name="Rejected commit: Default" comment="Project 3.0 ready for submission">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-sources.jar" afterPath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-sources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-test-sources.jar" afterPath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-test-sources.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-tests.jar" afterPath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT-tests.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/apptbook-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Appointment.class" afterPath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Appointment.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/AppointmentBook.class" afterPath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/AppointmentBook.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/PrettyPrinter.class" afterPath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/PrettyPrinter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Project3.class" afterPath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/Project3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/TextParser.class" afterPath="$PROJECT_DIR$/target/classes/edu/pdx/cs410J/seyed/TextParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/original-apptbook-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/original-apptbook-1.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/it/java/edu/pdx/cs410J/seyed/Project2IT.java" afterPath="$PROJECT_DIR$/src/it/java/edu/pdx/cs410J/seyed/Project2IT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/Appointment.java" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/Appointment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/AppointmentBook.java" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/AppointmentBook.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/PrettyPrinter.java" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/PrettyPrinter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/Project3.java" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/Project3.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/TextParser.java" afterPath="$PROJECT_DIR$/src/main/java/edu/pdx/cs410J/seyed/TextParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.pdx.cs410J.seyed.AppointmentTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-edu.pdx.cs410J.seyed.AppointmentTest.xml" />
     </list>
     <ignored path="apptbook.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,7 +42,6 @@
     <ignored path="$PROJECT_DIR$/target/failsafe-reports/" />
     <ignored path="$PROJECT_DIR$/target/it-classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -905,7 +886,7 @@
       <workItem from="1469992455330" duration="7233000" />
       <workItem from="1470182600582" duration="2999000" />
       <workItem from="1470240028830" duration="39000" />
-      <workItem from="1470240296512" duration="6603000" />
+      <workItem from="1470240296512" duration="6819000" />
     </task>
     <task id="LOCAL-00001" summary="Parsing and Dumping is done&#10;Working on Date Format">
       <created>1468438783038</created>
@@ -950,7 +931,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122568000" />
+    <option name="totallyTimeSpent" value="122784000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="14" y="28" width="1266" height="773" extended-state="0" />

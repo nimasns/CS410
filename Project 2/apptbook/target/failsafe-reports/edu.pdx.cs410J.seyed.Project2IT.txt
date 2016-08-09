@@ -1,29 +1,29 @@
 -------------------------------------------------------------------------------
 Test set: edu.pdx.cs410J.seyed.Project2IT
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.116 sec <<< FAILURE! - in edu.pdx.cs410J.seyed.Project2IT
-missingDescription(edu.pdx.cs410J.seyed.Project2IT)  Time elapsed: 0.096 sec  <<< FAILURE!
+Tests run: 9, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec <<< FAILURE! - in edu.pdx.cs410J.seyed.Project2IT
+missingDescription(edu.pdx.cs410J.seyed.Project2IT)  Time elapsed: 0.065 sec  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: a string containing "Missing description field!"
      but: was ""
 	at edu.pdx.cs410J.seyed.Project2IT.missingDescription(Project2IT.java:46)
 
-testNoCommandLineArguments(edu.pdx.cs410J.seyed.Project2IT)  Time elapsed: 0.001 sec  <<< FAILURE!
+testNoCommandLineArguments(edu.pdx.cs410J.seyed.Project2IT)  Time elapsed: 0 sec  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: <1>
      but: was <3>
 	at edu.pdx.cs410J.seyed.Project2IT.testNoCommandLineArguments(Project2IT.java:30)
 
-IncorrectBeginTimeFormat(edu.pdx.cs410J.seyed.Project2IT)  Time elapsed: 0.006 sec  <<< FAILURE!
+IncorrectBeginTimeFormat(edu.pdx.cs410J.seyed.Project2IT)  Time elapsed: 0.002 sec  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: a string containing "Invalid begin time format!"
      but: was ""
 	at edu.pdx.cs410J.seyed.Project2IT.IncorrectBeginTimeFormat(Project2IT.java:76)
 
-missingEndDate(edu.pdx.cs410J.seyed.Project2IT)  Time elapsed: 0.003 sec  <<< FAILURE!
+missingEndDate(edu.pdx.cs410J.seyed.Project2IT)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: a string containing "Missing end date field!"
@@ -51,7 +51,7 @@ Expected: a string containing "Missing begin time field!"
      but: was ""
 	at edu.pdx.cs410J.seyed.Project2IT.missingBeginTime(Project2IT.java:58)
 
-IncorrectEndTimeFormat(edu.pdx.cs410J.seyed.Project2IT)  Time elapsed: 0.001 sec  <<< FAILURE!
+IncorrectEndTimeFormat(edu.pdx.cs410J.seyed.Project2IT)  Time elapsed: 0.002 sec  <<< FAILURE!
 java.lang.AssertionError: 
 
 Expected: a string containing "Invalid end time format!"
