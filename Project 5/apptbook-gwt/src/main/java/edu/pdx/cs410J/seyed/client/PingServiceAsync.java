@@ -13,6 +13,7 @@ public interface PingServiceAsync {
    */
   void ping(AsyncCallback<AppointmentBook> async);
 
-  void ping(String owner, String description, String beginTime, String endTime, AsyncCallback<AbstractAppointmentBook> async) throws ThrowThis;
+  void ping(String owner, String description, String beginTime, String endTime, AsyncCallback<AppointmentBook> async);
 
+  void ping(String owner, String beginTime, String endTime, AsyncCallback<AppointmentBook> async);
 }

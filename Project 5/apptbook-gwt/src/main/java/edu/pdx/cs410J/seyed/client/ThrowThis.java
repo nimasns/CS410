@@ -1,7 +1,7 @@
 package edu.pdx.cs410J.seyed.client;
 
 /**
- * Created by seyed on 8/13/15.
+ * Created by Seyed
  */
 public class ThrowThis extends RuntimeException {
     public ThrowThis(String message) {

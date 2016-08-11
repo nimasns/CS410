@@ -8,12 +8,21 @@ import java.util.Collection;
 public class AppointmentBook extends AbstractAppointmentBook<Appointment>
 {
 
+    private String owner;
     private Collection<Appointment> appts = new ArrayList<>();
+
+    public AppointmentBook(String owner){
+        this.owner = owner;
+    }
+
+    public AppointmentBook() {
+    }
+
 
     @Override
     public String getOwnerName()
     {
-        return "My Owner";
+        return owner;
     }
 
     @Override

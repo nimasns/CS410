@@ -14,4 +14,8 @@ public interface PingService extends RemoteService {
    */
   public AppointmentBook ping();
 
+  public AppointmentBook ping(String owner, String description, String beginTime, String endTime) throws ThrowThis;
+
+  public AppointmentBook ping(String owner, String beginTime, String endTime) throws ThrowThis;
+
 }
