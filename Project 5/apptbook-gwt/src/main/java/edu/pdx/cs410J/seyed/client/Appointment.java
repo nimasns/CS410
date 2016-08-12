@@ -65,6 +65,4 @@ public class Appointment extends AbstractAppointment
         //return new Date();
     }
 
-
-    //add CompareTo
 }

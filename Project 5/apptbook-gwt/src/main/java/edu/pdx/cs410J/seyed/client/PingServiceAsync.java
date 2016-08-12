@@ -15,5 +15,5 @@ public interface PingServiceAsync {
 
   void ping(String owner, String description, String beginTime, String endTime, AsyncCallback<AppointmentBook> async);
 
-  void ping(String owner, String beginTime, String endTime, AsyncCallback<AppointmentBook> async);
+  void pingSearch(String owner, String description, String beginTime, String endTime, AsyncCallback<AppointmentBook> async);
 }

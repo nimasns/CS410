@@ -1,5 +1,6 @@
 package edu.pdx.cs410J.seyed.server;
 
+import com.google.gwt.editor.client.Editor;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import edu.pdx.cs410J.seyed.client.Appointment;
 import edu.pdx.cs410J.seyed.client.AppointmentBook;
@@ -38,20 +39,20 @@ public class PingServiceImpl extends RemoteServiceServlet implements PingService
         return book;
     }
 
+  @Override
+  public AppointmentBook pingSearch(String owner, String description, String beginTime, String endTime) {
+      if(owner == null || "".equals(owner)) {
+          throw new ThrowThis("Owner is blank");
+      } else if (book.getOwnerName().equals(owner)) {
+          System.out.print("Found appointment");
+      } else {
+          throw new ThrowThis("Owner does not match");
+      }
 
-    @Override
-    public AppointmentBook ping(String owner, String beginTime, String endTime) throws ThrowThis {
-        if(owner == null || "".equals(owner)) {
-            throw new ThrowThis("Owner is blank");
-        } else if(book.getOwnerName().equals(owner)) {
-            System.out.println("Found Owner");
-        } else {
-            throw new ThrowThis("owner does not match");
-        }
-        return book;
-    }
+      return book;
+  }
 
-    @Override
+  @Override
   protected void doUnexpectedFailure(Throwable unhandled) {
     unhandled.printStackTrace(System.err);
     super.doUnexpectedFailure(unhandled);

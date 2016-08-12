@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35f98498-bce2-4db1-ac0b-cc3f1e9ad1ad" name="Default" comment="Project 4&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/it/java/edu/pdx/cs410J/seyed/server/PingServiceImplTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/client/Appointment.java" afterPath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/client/Appointment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/client/AppointmentBook.java" afterPath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/client/AppointmentBook.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/client/AppointmentBookGwt.java" afterPath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/client/AppointmentBookGwt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/client/PingService.java" afterPath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/client/PingService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/client/PingServiceAsync.java" afterPath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/client/PingServiceAsync.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/client/ThrowThis.java" afterPath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/client/ThrowThis.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/server/PingServiceImpl.java" afterPath="$PROJECT_DIR$/../../Project 5/apptbook-gwt/src/main/java/edu/pdx/cs410J/seyed/server/PingServiceImpl.java" />
     </list>
     <list id="92dea798-b655-4e6e-8999-52c211ce5ecd" name="Ignore files" comment="" />
     <ignored path="apptbook.iws" />
